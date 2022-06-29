@@ -1,0 +1,25 @@
+
+@keyframes type{
+    0% , 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+@keyframes imgbottom{
+    0%{
+        background-position: center top;
+    }
+    100%{
+        background-position: center bottom;
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(359deg);
+    }
+}

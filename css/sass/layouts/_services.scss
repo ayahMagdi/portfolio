@@ -1,0 +1,37 @@
+// start services
+.main-content__services{
+    padding: var(--section-padd);
+    background-color: var(--alt-background);
+    .services{
+        @include ds-grid (grid,minmax(470px , 1fr),center,center,50px);
+        &__serv{
+            display: flex;
+            &__icon{
+                @include ds-flex (flex,center,center);
+                margin-right: 20px;
+                i{
+                    font-size: 30px;
+                    color: var(--main-color);
+                    background-color: var(--main-background);
+                    padding: 20px;
+                    box-shadow: 0 .125rem .25rem rgba(0 , 0 , 0 , .075);
+                    border-radius: 4px;
+                }
+            }
+            &__text{
+                h3{
+                    font-size: 20px;
+                    color: var(--alt-title);
+                    font-weight: 400;
+                    margin: 15px 0;
+                }
+                p{
+                    margin: 0;
+                    line-height: 1.8;
+                    color: var(--p-color);
+                }
+            }
+        }
+    }
+}
+// end services

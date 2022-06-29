@@ -1,0 +1,54 @@
+// mixin for position
+
+@mixin position($postion , $top , $bottom , $left , $right , $transform) {
+    position: $postion;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    transform: $transform;
+}
+
+// mixin for dispaly flex
+
+@mixin ds-flex($flex , $justifiy , $align){
+    display: $flex;
+    justify-content: $justifiy;
+    align-items: $align;
+}
+
+// mixin for dispaly grid
+
+@mixin ds-grid($grid , $template , $justifiy , $align , $gap){
+    display: $grid;
+    grid-template-columns: repeat(auto-fill , $template);
+    justify-content: $justifiy;
+    align-items: $align;
+    gap: $gap;
+}
+
+// mixin for responsive
+
+@mixin responsive($screen){
+    @media (max-width: $screen){
+       @content;
+    }
+}
+
+// mixin for image rounded
+
+@mixin  rounded ($width , $height) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+}
+
+
+// mixin for buttons
+// @mixin btn($color,$background,$border,$margin,$padding){
+//      color: $color;
+//      background: $background;
+//      border: $border;
+//      margin: $margin;
+//      padding: $padding;
+// }

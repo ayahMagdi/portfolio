@@ -1,0 +1,152 @@
+// start header
+.header{
+    @include position(fixed,0,auto,0,auto, none);
+    @include ds-flex(flex, space-between, center);
+    background-color: #111418;
+    width: 260px;
+    z-index: 9999;
+    flex-direction: column;
+    height: 100vh;
+    @include responsive(991px){
+        width: 100%;
+        height: auto;
+        padding: 8px 20px;
+        flex-direction: row;
+    }
+    &__head{
+        padding: 40px 0;
+        @include responsive(991px){
+            padding: 0;
+            flex: 1;
+        }
+        &__image{
+            @include rounded (180px , 180px);
+            background-color: #343a40 ;
+            padding: 10px;
+            @include responsive(991px){
+                display: none;
+            }
+            img{
+               @include rounded (100% , 100%);
+               object-fit: cover;
+            }
+        }
+        .user-name{
+            color: #FFF;
+            text-align: center;
+            margin: 15px 0;
+            font-weight: 500;
+            @include responsive(991px){
+                text-align: left;
+                font-size: 20px;
+            }
+        }
+    }
+    &__nav{
+        flex: 1;
+        padding-bottom: 60px;
+        @include responsive(991px){
+            @include position(absolute,100%,auto,0,auto, none);
+            padding-bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            width: 100%;
+            padding: 15px;
+            display: none;
+            transition: .5s;
+            &.show{
+              display: block;
+            }
+        }
+        .links{
+            @include ds-flex(flex , space-around , center);
+            height: 100%;
+            flex-direction: column;
+            text-align: center;
+            @include responsive(991px){
+                text-align: left
+            }
+            li{
+                width: 100%;
+                a{
+                    color: #FFF;
+                    display: block;
+                    font-size: 16px;
+                    transition: color .5s;
+                    text-transform: capitalize;
+                    &.active{
+                        color: var(--main-color);
+                    }
+                    &:hover{
+                        color: var(--main-color);
+                    }
+                    @include responsive(991px){
+                        border-bottom: 1px solid rgba(250, 250, 250, 0.15);
+                        color: rgba(250, 250, 250, 0.9);
+                        font-size: 16px;
+                        padding: 10px 0;
+                    }
+                }
+                &:last-child a{
+                    @include responsive(991px){
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    &__social-icons{
+        padding: 0 0 20px 0;
+        display: flex;
+        @include responsive (991px){
+            padding: 0 20px 0 0 
+        }
+        a{
+            margin-right: 15px;
+            position: relative;
+            display: block;
+            &:last-of-type{margin-right: 0}
+            i{
+                color: #aab1b8;
+                transition: color .5s;
+            }
+            &[data-text= "facebook"]:hover {i{color: #1877F2}}
+            &[data-text= "twitter"]:hover {i{color: #1DA1F2}}
+            &[data-text= "dribbble"]:hover {i{color: #EA4C89}}
+            &[data-text= "github"]:hover {i{color: #00405d}}
+            .icon-text{
+                @include position(absolute,-38px,auto,50%,auto,translateX(-50%));
+                color: #FFF;
+                background-color: #000;
+                font-size: 13px;
+                padding: 5px 10px;
+                border-radius: 4px;
+                display: block;
+                @include responsive (991px){
+                    @include position(absolute,auto,-38px,50%,auto,translateX(-50%));
+                }
+                &::before{
+                    @include position(absolute,auto,-17px,50%,auto,translateX(-50%));
+                    content: "";
+                    border: 10px;
+                    border-style: solid;
+                    border-color: #000 transparent transparent transparent;
+                    @include responsive (991px){
+                        @include position(absolute,-17px,auto,50%,auto,translateX(-50%));
+                        border-color: transparent transparent #000 transparent;
+                    }
+                }
+            }
+        }
+    }
+    .list-icon{
+        display: none;
+        @include responsive (991px){
+            position: relative;
+            display: block;
+            color: #FFF;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    }
+}
+// end header

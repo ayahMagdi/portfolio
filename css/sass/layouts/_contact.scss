@@ -1,0 +1,107 @@
+// start contact
+.main-content__contact{
+    &__info{
+        padding: var(--section-padd);
+        background-color: var(--alt-background);
+        .contact__personal-info{
+            text-align: center;
+            h3{
+                font-size: 25px;
+                color: var(--main-color);
+                text-transform: capitalize;
+            }
+            >p{
+                color: var(--alt-title);
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .contact-row{
+                @include ds-flex (flex ,space-around ,center);
+                margin: 70px 0;
+                i{
+                    font-size: 30px;
+                    color: var(--main-color);
+                    @include responsive (991px){font-size: 25px};
+                }
+                p{
+                    font-size: 20px;
+                    color: var(--p-color);
+                    text-transform: capitalize;
+                    margin: 10px 0;
+                    @include responsive (991px){font-size: 17px}
+                }
+                span{
+                    font-size: 20px;
+                    color: var(--light-text) ;
+                    @include responsive (991px){font-size: 14px}
+                }
+            }
+            .contact{
+                margin-top: 70px;
+                .row{
+                    display: flex;
+                    gap: 20px;
+                }
+                input , textarea{
+                    display: block;
+                    width: 100%;
+                    padding: 20px 30px;
+                    border-radius: 30px; 
+                    background-color: var(--main-background);
+                    margin-bottom: 20px;
+                    border: none;
+                    text-transform: capitalize;
+                    border: 1px solid var(--border-box);
+                    outline: none;
+                    &[name="message"]{
+                        height: 150px;
+                    }
+                }
+                .btn{
+                    input{
+                        width: fit-content;
+                        color: #FFF;
+                        background-color: var(--main-color);
+                        padding: 20px 50px;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+        }
+    }
+    .footer{
+        background-color: var(--main-background);
+        padding: 50px 40px;
+        .footer-info{
+            @include ds-flex (flex, space-between , center);
+            color: var(--alt-title);
+            p{
+                @include responsive (991px){
+                    font-size: 14px;
+                }
+                span{
+                    color: var(--main-color);
+                    text-transform: capitalize;
+                }
+            }
+            .footer__links{
+                a{
+                    color: var(--alt-title);
+                    border-right: 1px solid #e5e5e5;
+                    padding: 0 10px;
+                    transition: .5s;
+                    @include responsive (991px){font-size: 14px;};
+                    &:last-child{
+                        border-right: none;
+                        padding: 0 0 0 10px;
+                    }
+                    &:hover{
+                        color: var(--main-color)r;
+                    }
+                }
+            }
+        }
+    }
+}
+// start contact

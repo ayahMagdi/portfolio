@@ -1,0 +1,52 @@
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+} 
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+/* Large */
+ @media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+} 
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    margin-left: 260px;
+    @include responsive(991px){
+            margin-left: 0;
+    }
+}

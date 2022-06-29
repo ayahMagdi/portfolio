@@ -1,0 +1,30 @@
+// start portfolio
+.main-content__portfolio{
+    padding: var(--section-padd);
+    background-color: var(--alt-background);
+    .gallery{
+        @include ds-grid (grid,minmax(250px , 1fr),center,center,50px);
+        .gallery-imgs{
+            height: 300px;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            .img{
+                height: 100%;
+                width: 100%;
+                transition: .5s;
+                background-position: center top;
+                background-size: cover;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+                &.img1{background-image: url(../imgs/img2.png)}
+                &.img2{background-image: url(../imgs/img3.png)}
+                &.img3{background-image: url(../imgs/img4.png)}
+                &.img4{background-image: url(../imgs/img5.png)}
+                &.img5{background-image: url(../imgs/img6.png)}
+                &.img6{background-image: url(../imgs/img1.png)}
+                &:hover{animation: imgbottom 2s linear forwards}
+            }
+        }
+    }
+}
+// end portfolio

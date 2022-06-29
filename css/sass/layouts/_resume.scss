@@ -1,0 +1,100 @@
+// start resume
+%section-title{
+    color: var(--alt-title);
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0 0 20px 0;
+}
+
+.main-content__resume{
+    padding: var(--section-padd);
+    background-color: var(--main-background);
+    .resume-content{
+        @include ds-grid (grid,minmax(344px , 1fr),center,center,50px);
+        &__education , &__experience{
+            h3{@extend %section-title}
+            .experience-info , .education-info{
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 4px;
+                border: 1px solid var(--border-box);
+                border-radius: 4px;
+                background-color: var(--bg-box);
+                .date{
+                    display: block;
+                    color: #FFF;
+                    background-color: var(--main-color);
+                    width: fit-content;
+                    border-radius: 4px;
+                    padding: 3px 10px;
+                    font-size: 14px;
+                }
+                h4{
+                    color: var(--alt-title);
+                    font-size: 23px;
+                    margin: 15px 0;
+                    font-weight: 400;
+                }
+                .university{
+                    color: #dc3545;
+                    font-size: 16px;
+                }
+                p{
+                    margin: 20px 0 0 0;
+                    line-height: 1.8;
+                    color: var(--p-color);
+                }
+            }
+        }
+    }
+    .resume-skills{
+        h3{@extend %section-title}
+        .skills-container{
+            @include ds-grid (grid,minmax(344px , 1fr),center,center,50px);
+            margin-top: 30px;
+            .skills{
+                h4{
+                    color: var(--alt-title);
+                    text-transform: capitalize;
+                    font-weight: 400;
+                    font-size: 17px;
+                    margin: 0 0 15px 0;
+                }
+                .skill{
+                    height: 10px;
+                    border-radius: 5px;
+                    background-color: var(--progress-bg);
+                    position: relative;
+                    &::after{
+                        @include position (absolute,-30px,auto,auto,0,none);
+                        content: attr(data-progress);
+                        color: var(--alt-title);
+                    }
+                    span{
+                        background-color: var(--main-color);
+                        display: block;
+                        height: 100%;
+                        border-radius: 5px;
+                        width: 0;
+                        transition: .8s;
+                    }
+                }
+            }
+        }
+    }
+    .download{
+        border: 1px solid #6c757d;
+        color: #6c757d;
+        margin: 70px auto 0 auto;
+        padding: 20px 40px;
+        transition: .5s;
+        i{margin-left: 8px;}
+        &:hover{
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: #FFF;
+        }
+    }
+}
+// end resume

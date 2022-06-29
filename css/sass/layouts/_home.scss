@@ -1,0 +1,60 @@
+// start header 
+.main-content__home{
+    @include ds-flex (flex , center , center);
+    background: #00000099 url(../imgs/background2.jfif) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: multiply;
+    text-align: center;
+    span{
+        display: block;
+        font-size: 32px;
+        text-transform: capitalize;
+        color: #FFF;
+        @include responsive (991px){
+            font-size: 25px;
+        }
+    }
+    .header-title{
+        color: #FFF;
+        font-size: 65px;
+        text-transform: capitalize;
+        margin: 20px 0;
+        height: 75.74px;
+        font-weight: 600;
+        position: relative;
+        @include responsive (991px){
+            font-size: 45px;
+            height: 54.74px;
+        }
+        &::after{
+            @include position (absolute,50%,auto,auto,auto,translateY(-50%));
+            content: '';
+            background-color: #FFF;
+            height: 80%;
+            width: 8px;
+            margin-left: 5px;
+            animation: type .3s linear infinite;
+        }
+    }
+    p{
+        color: #aab1b8;
+        font-size: 23px;
+        margin: 0 0 30px 0;
+        @include responsive (991px){
+            font-size: 17px;
+        }
+    }
+    a{
+        color: var(--main-color);
+        border: 1px solid var(--main-color);
+        margin: 0 auto;
+        padding: 15px 40px;
+        transition: .5s;
+        &:hover{
+            color: #FFF;
+            background-color: var(--main-color);
+        }
+    }
+}
+// end header 
