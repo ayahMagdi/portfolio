@@ -46,6 +46,7 @@ a{
 
 .wrapper{
     margin-left: 260px;
+    overflow: hidden;
     @include responsive(991px){
             margin-left: 0;
     }
