@@ -59,7 +59,7 @@ a.btn {
 }
 @media (max-width: 991px) {
   .main-title {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 .main-title::before {
@@ -80,7 +80,7 @@ a.btn {
 }
 @media (max-width: 991px) {
   .main-title::before {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 }
 .main-title::after {
@@ -192,6 +192,7 @@ a {
 
 .wrapper {
   margin-left: 260px;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   .wrapper {
