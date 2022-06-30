@@ -8,6 +8,7 @@
     flex-direction: column;
     height: 100vh;
     @include responsive(991px){
+        position: initial;
         width: 100%;
         height: auto;
         padding: 8px 20px;
@@ -36,26 +37,24 @@
             text-align: center;
             margin: 15px 0;
             font-weight: 500;
-            @include responsive(991px){
-                text-align: left;
-                font-size: 20px;
-            }
+            @include responsive(991px){text-align: left}
+            @include responsive(767px){font-size: 17px}
         }
     }
     &__nav{
         flex: 1;
         padding-bottom: 60px;
         @include responsive(991px){
-            @include position(absolute,100%,auto,0,auto, none);
+            @include position(absolute,9%,auto,0,auto, none);
             padding-bottom: 0;
             background: rgba(0, 0, 0, 0.95);
             width: 100%;
             padding: 15px;
-            display: none;
-            transition: .5s;
-            &.show{
-              display: block;
-            }
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: .3s;
+            z-index: 999;
+            &.show{transform: scaleY(1);}
         }
         .links{
             @include ds-flex(flex , space-around , center);
@@ -98,13 +97,16 @@
         padding: 0 0 20px 0;
         display: flex;
         @include responsive (991px){
-            padding: 0 20px 0 0 
+            padding: 0 15px 0 0 
         }
         a{
             margin-right: 15px;
             position: relative;
             display: block;
             &:last-of-type{margin-right: 0}
+            @include responsive(767px){
+               font-size: 14px;
+            }
             i{
                 color: #aab1b8;
                 transition: color .5s;
@@ -144,8 +146,9 @@
             position: relative;
             display: block;
             color: #FFF;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
+            transition: .5s;
         }
     }
 }
