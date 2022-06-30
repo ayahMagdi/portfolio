@@ -218,6 +218,7 @@ a {
 }
 @media (max-width: 991px) {
   .header {
+    position: initial;
     width: 100%;
     height: auto;
     padding: 8px 20px;
@@ -261,7 +262,11 @@ a {
 @media (max-width: 991px) {
   .header__head .user-name {
     text-align: left;
-    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .header__head .user-name {
+    font-size: 17px;
   }
 }
 .header__nav {
@@ -271,7 +276,7 @@ a {
 @media (max-width: 991px) {
   .header__nav {
     position: absolute;
-    top: 100%;
+    top: 9%;
     bottom: auto;
     left: 0;
     right: auto;
@@ -280,11 +285,13 @@ a {
     background: rgba(0, 0, 0, 0.95);
     width: 100%;
     padding: 15px;
-    display: none;
-    transition: 0.5s;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+    z-index: 999;
   }
   .header__nav.show {
-    display: block;
+    transform: scaleY(1);
   }
 }
 .header__nav .links {
@@ -335,7 +342,7 @@ a {
 }
 @media (max-width: 991px) {
   .header__social-icons {
-    padding: 0 20px 0 0;
+    padding: 0 15px 0 0;
   }
 }
 .header__social-icons a {
@@ -345,6 +352,11 @@ a {
 }
 .header__social-icons a:last-of-type {
   margin-right: 0;
+}
+@media (max-width: 767px) {
+  .header__social-icons a {
+    font-size: 14px;
+  }
 }
 .header__social-icons a i {
   color: #aab1b8;
@@ -417,8 +429,9 @@ a {
     position: relative;
     display: block;
     color: #FFF;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
+    transition: 0.5s;
   }
 }
 
@@ -538,7 +551,6 @@ a {
 .main-content__about .about-description__text p {
   line-height: 1.8;
   color: var(--p-color);
-  font-size: 17px;
 }
 @media (max-width: 991px) {
   .main-content__about .about-description__text p {
@@ -585,13 +597,14 @@ a {
   background-color: #1baa80;
 }
 .main-content__about .about-stats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
   align-items: center;
+  gap: 50px;
   margin-top: 100px;
 }
 .main-content__about .about-stats__stat {
-  flex-basis: 25%;
   text-align: center;
   border-right: var(--border-bottom);
   padding: 20px;
@@ -607,7 +620,6 @@ a {
   font-weight: 400;
 }
 .main-content__about .about-stats__stat p {
-  font-size: 16px;
   color: var(--light-text);
   margin: 0;
 }
