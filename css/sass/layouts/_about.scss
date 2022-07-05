@@ -2,7 +2,7 @@
 .main-content__about{
     padding: var(--section-padd);
     background-color: var(--main-background);
-
+    @include responsive (767px){padding: 50px 0}
     .about-description{
         @include ds-flex (flex,space-between,center);
         margin: 0 0 40px 0;
@@ -26,7 +26,7 @@
             p{
                 line-height: 1.8;
                 color: var(--p-color);
-                font-size: 17px;
+                // font-size: 17px;
                 @include responsive (991px){font-size: 16px;}
                 &:first-child{margin-bottom: 30px}
             }
@@ -63,14 +63,14 @@
         }
     }
     .about-stats{
-        @include ds-flex (flex,center,center);
+        @include ds-grid (grid,minmax(200px , 1fr),center,center , 50px);
         margin-top: 100px;
         &__stat{
-            flex-basis: 25%;
+            // flex-basis: 25%;
             text-align: center;
-            border-right: var(--border-bottom);
+            border: var(--border-bottom);
             padding: 20px;
-            &:last-of-type{border-right: none}
+            // &:last-of-type{border-right: none}
             h4{
                 color: var(--stats-color);
                 font-size: 45px;
@@ -79,7 +79,7 @@
                 font-weight: 400;
             }
             p{
-                font-size: 16px;
+                // font-size: 16px;
                 color: var(--light-text);
                 margin: 0;
             }

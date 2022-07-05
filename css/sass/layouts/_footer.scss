@@ -1,0 +1,39 @@
+// start footer
+.footer{
+    background-color: var(--main-background);
+    padding: 50px 40px;
+    @include responsive (767px){padding: 50px 0}
+    .footer-info{
+        @include ds-flex (flex, space-between , center);
+        color: var(--alt-title);
+        @include responsive (767px){flex-direction: column;}
+        p{
+            margin: 0;
+            @include responsive (767px){
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+            span{
+                color: var(--main-color);
+                text-transform: capitalize;
+            }
+        }
+        .footer__links{
+            a{
+                color: var(--alt-title);
+                border-right: 1px solid #e5e5e5;
+                padding: 0 10px;
+                transition: .5s;
+                @include responsive (767px){font-size: 15px;};
+                &:last-child{
+                    border-right: none;
+                    padding: 0 0 0 10px;
+                }
+                &:hover{
+                    color: var(--main-color)r;
+                }
+            }
+        }
+    }
+}
+// end footer

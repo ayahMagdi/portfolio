@@ -2,6 +2,7 @@
 .main-content__portfolio{
     padding: var(--section-padd);
     background-color: var(--alt-background);
+    @include responsive (767px){padding: 50px 0}
     .gallery{
         @include ds-grid (grid,minmax(250px , 1fr),center,center,50px);
         .gallery-imgs{

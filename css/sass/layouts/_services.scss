@@ -2,6 +2,7 @@
 .main-content__services{
     padding: var(--section-padd);
     background-color: var(--alt-background);
+    @include responsive (767px){padding: 50px 0}
     .services{
         @include ds-grid (grid,minmax(470px , 1fr),center,center,50px);
         &__serv{

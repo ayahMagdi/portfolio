@@ -10,6 +10,7 @@
 .main-content__resume{
     padding: var(--section-padd);
     background-color: var(--main-background);
+    @include responsive (767px){padding: 50px 0}
     .resume-content{
         @include ds-grid (grid,minmax(344px , 1fr),center,center,50px);
         &__education , &__experience{
