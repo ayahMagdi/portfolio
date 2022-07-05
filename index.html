@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Portfolio</title>
 </head>
-<body class="dark">
+<body>
    
      
     <div class="wrapper">
         <!-- start header -->
         <header class="header">
+           <!-- <div class="header-fixed"> -->
             <div class="header__head">
                 <div class="header__head__image">
                     <img src="imgs/user.jfif" alt="user img">
@@ -36,10 +37,9 @@
                     <li><a href="#contact" data-scroll="contact">contact</a></li>
                 </ul>
             </nav>
-            <div class="header__social-icons">
-                <a href="#" class="social-icon" data-text="facebook">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/aya.magdy.96155669/" class="social-icon" data-text="facebook">
                     <i class="fa-brands fa-facebook-f"></i>
-                    <!-- <span class="icon-text">facebook</span> -->
                 </a>
                 <a href="#" class="social-icon" data-text="twitter">
                     <i class="fa-brands fa-twitter"></i>
@@ -52,6 +52,7 @@
                 </a>
             </div>
             <div class="list-icon"><i class="fa-solid fa-bars"></i></div>
+           <!-- </div> -->
         </header>
         <!-- end header -->
         <!-- start main content -->
@@ -383,49 +384,46 @@
                             </div>
                         </div>
                         <div class="pagenation">
-                            <!-- <ul>
-                                <li class="active"></li>
-                                <li></li>
-                                <li style="display: none;"></li>
-                                <li style="display: none;"></li>
-                            </ul> -->
                         </div>
                 </div>
             </div>
             <!-- end testimonials -->
             <!-- start contact -->
             <div class="main-content__contact" id="contact">
-                <div class="main-content__contact__info">
                 <div class="container">
                     <h2 class="main-title" data-title="contact">get in touch</h2>
                     <div class="contact__personal-info">
-                        <h3>have you any questions?</h3>
-                        <p>i'm at your service</p>
-                        <div class="contact-row">
-                            <div class="box">
-                                <i class="fa-solid fa-phone-flip"></i>
-                                <p>call us on</p>
-                                <span>+92 3490654789</span>
-                            </div>
-                            <div class="box">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>office</p>
-                                <span>+92 3490654789</span>
-                            </div>
-                            <div class="box">
-                                <i class="fa-solid fa-envelope"></i>
-                                <p>email</p>
-                                <span>+92 3490654789</span>
-                            </div>
-                            <div class="box">
-                                <i class="fa-solid fa-earth-europe"></i>
-                                <p>website</p>
-                                <span>+92 3490654789</span>
+                        <div class="contact-address">
+                            <h3>address</h3>
+                            <p>
+                                4th Floor, Plot No.22,<br>
+                                145 Murphy Canyon Rd.<br>
+                                San Diego CA 2028
+                            </p>
+                            <p><span><i class="fa-solid fa-phone-flip"></i></span>(060) 444 434 444</p>
+                            <p><span><i class="fa-solid fa-fax"></i></span>(060) 555 545 555</p>
+                            <p><span><i class="fa-solid fa-envelope"></i></span>chat@ayah.com</p>
+                            <h3>follow me</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" data-text="dribbble">
+                                    <i class="fa-brands fa-dribbble"></i>
+                                </a>
+                                <a href="#" class="social-icon" data-text="twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon" data-text="google">
+                                    <i class="fa-brands fa-google"></i>
+                                </a>
+                                <a href="https://www.facebook.com/aya.magdy.96155669/" class="social-icon" data-text="facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon" data-text="github">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
                             </div>
                         </div>
-                        <h3>have you any questions?</h3>
-                        <p>i'm at your service</p>
                         <form class="contact">
+                            <h3>send us a note</h3>
                             <div class="row">
                                 <input type="text" name="username" placeholder="name">
                                 <input type="email" name="email" placeholder="email">
@@ -438,20 +436,21 @@
                         </form>
                     </div>
                 </div>
+            </div>
+           <!-- end contact --> 
+           <!-- start footer -->
+           <div class="footer">
+            <div class="container">
+                <div class="footer-info">
+                <p>Copyright © 2021 <span>ayah</span>. All Rights Reserved.</p>
+                <div class="footer__links">
+                    <a href="#">Terms & Policy</a>
+                    <a href="#">Disclaimer</a>
                 </div>
-            <div class="footer">
-                <div class="container">
-                    <div class="footer-info">
-                    <p>Copyright © 2021 <span>ayah</span>. All Rights Reserved.</p>
-                    <div class="footer__links">
-                        <a href="#">Terms & Policy</a>
-                        <a href="#">Disclaimer</a>
-                    </div>
-                    </div>
                 </div>
             </div>
-            </div>
-        <!-- end contact -->      
+           </div>
+           <!-- end footer -->
         </div>
         <!-- end main content -->
         <!-- start switcher -->
