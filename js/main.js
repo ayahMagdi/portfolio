@@ -1,5 +1,19 @@
+// position fixed to header on scroll
+let header = document.querySelector('.header');
+let headerNav = document.querySelector('.header__nav');
+
+window.onscroll = function(){
+    if(window.scrollY > 0){
+        headerNav.style.top = "100%";
+    }else{
+        headerNav.style.top = "9%";
+    }
+}
+
+// headerNav.ch
+
 // social icons hover text
-let socialLinks = document.querySelectorAll(".header__social-icons .social-icon");
+let socialLinks = document.querySelectorAll(".social-icons .social-icon");
 let linksArr = [...socialLinks];
 
 function createText(el){
@@ -70,7 +84,13 @@ let listIcon = document.querySelector('.header .list-icon');
 let listNav = document.querySelector('.header .header__nav');
 listIcon.addEventListener('click' , function(){
     listNav.classList.toggle('show');
-    console.log(this)
+    if(this.firstElementChild.classList.contains('fa-bars')){
+        this.firstElementChild.classList.add('fa-xmark');
+        this.firstElementChild.classList.remove('fa-bars');
+    }else{
+        this.firstElementChild.classList.add('fa-bars');
+        this.firstElementChild.classList.remove('fa-xmark');
+    }
 });
 
 /*****************************************************/
@@ -100,10 +120,13 @@ window.addEventListener("scroll" , function(el){
 
 arrList.forEach(function(e){
     e.addEventListener("click" , function(el){
+        headerNav.classList.remove('show');
+        listIcon.firstElementChild.classList.remove('fa-xmark');
+        listIcon.firstElementChild.classList.add('fa-bars');
         window.animate({
             scrollTo: document.getElementById(e.getAttribute("data-scroll")).offsetTop
-        }, 2000);
-        window.scrollTo
+        }, 2000)
+        // window.scrollTo
         arrList.forEach(function(r){
             r.classList.remove("active");
         });
