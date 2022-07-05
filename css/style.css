@@ -397,7 +397,7 @@ a {
 @media (max-width: 991px) {
   .header__nav {
     position: absolute;
-    top: 9%;
+    top: 100%;
     bottom: auto;
     left: 0;
     right: auto;
