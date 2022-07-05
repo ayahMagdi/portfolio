@@ -8,6 +8,7 @@ a.btn{
 }
 
 // main title
+
 .main-title{
     color: var(--title-color);
     text-align: center;
@@ -17,8 +18,10 @@ a.btn{
     position: relative;
     margin: 100px 0;
     z-index: 1;
-    @include responsive (991px){
-        font-size: 22px;
+    @include responsive (991px){font-size: 25px}
+    @include responsive (767px){
+        font-size: 20px;
+        margin: 50px 0;
     }
     &::before{
         @include position (absolute,50%,auto,50%,auto,translate(-50% , -50%));
@@ -30,9 +33,8 @@ a.btn{
         white-space: nowrap;
         opacity: .4;
         line-height: 1.3;
-        @include responsive (991px){
-            font-size: 4rem;
-        }
+        @include responsive (991px){font-size: 6rem}
+        @include responsive (767px){font-size: 3.5rem}
     }
     &::after{
         @include position (absolute,auto,-17px,50%,auto,translateX(-50%));
@@ -40,5 +42,56 @@ a.btn{
         width: 80px;
         height: 3px;
         background-color: var(--main-color);
+        @include responsive (991px){width: 70px}
+        @include responsive (767px){width: 60px}
+    }
+}
+
+.social-icons{
+    padding: 0 0 20px 0;
+    display: flex;
+    @include responsive (991px){
+        padding: 0 15px 0 0 
+    }
+    a{
+        margin-right: 15px;
+        position: relative;
+        display: block;
+        &:last-of-type{margin-right: 0}
+        @include responsive(767px){
+           font-size: 14px;
+        }
+        i{
+            color: #aab1b8;
+            transition: color .5s;
+        }
+        &[data-text= "facebook"]:hover {i{color: #1877F2 !important}}
+        &[data-text= "twitter"]:hover {i{color: #1DA1F2 !important}}
+        &[data-text= "dribbble"]:hover {i{color: #EA4C89 !important}}
+        &[data-text= "github"]:hover {i{color: #00405d !important}}
+        &[data-text= "google"]:hover {i{color: #EA4335 !important}}
+        .icon-text{
+            @include position(absolute,-38px,auto,50%,auto,translateX(-50%));
+            color: #FFF;
+            background-color: #000;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: block;
+            @include responsive (991px){
+                @include position(absolute,auto,-38px,50%,auto,translateX(-50%));
+            }
+            &::before{
+                @include position(absolute,auto,-17px,50%,auto,translateX(-50%));
+                content: "";
+                border: 10px;
+                border-style: solid;
+                border-color: #000 transparent transparent transparent;
+                @include responsive (991px){
+                    @include position(absolute,-17px,auto,50%,auto,translateX(-50%));
+                    border-color: transparent transparent #000 transparent;
+                }
+            }
+        }
     }
 }
