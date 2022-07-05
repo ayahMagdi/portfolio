@@ -45,7 +45,7 @@
         flex: 1;
         padding-bottom: 60px;
         @include responsive(991px){
-            @include position(absolute,9%,auto,0,auto, none);
+            @include position(absolute,100%,auto,0,auto, none);
             padding-bottom: 0;
             background: rgba(0, 0, 0, 0.95);
             width: 100%;
