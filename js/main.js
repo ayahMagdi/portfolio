@@ -2,13 +2,13 @@
 let header = document.querySelector('.header');
 let headerNav = document.querySelector('.header__nav');
 
-window.onscroll = function(){
-    if(window.scrollY > 10){
-        headerNav.style.top = "100%";
-    }else{
-        headerNav.style.top = "9%";
-    }
-}
+// window.onscroll = function(){
+//     if(window.scrollY > 10){
+//         headerNav.style.top = "100%";
+//     }else{
+//         headerNav.style.top = "9%";
+//     }
+// }
 
 // headerNav.ch
 
