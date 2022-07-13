@@ -3,66 +3,89 @@
     padding: var(--section-padd);
     background-color: var(--main-background);
     @include responsive (767px){padding: 50px 0}
-    // overflow: hidden;
     .testimonials-container{
-        @include ds-grid (grid,minmax(500px , 1fr),center,center,50px);
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        // gap: 50px;
-        overflow: hidden;
+        position: relative;
         transition: .5s;
-        .testimonial{
-            position: relative;
-            background-color: var(--testimonial-bg);
-            border-radius: 4px;
-            padding: 30px;
+        height: 350px;
+        width: 100%;
+        .slider-container{
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transform-origin: top left;
+            transform: rotateY(90deg);
             transition: .5s;
-            min-width: 48%;
-            max-width: 100%;
-            &.show{
-                transform: translateX(0);
+            @include responsive (767px){flex-direction: column;}
+            &.active{
+                opacity: 1;
+                transform: rotateY(0);
             }
-            &.hide{
-                transform: translateX(-250%);
-            }
-            .client-info{
-                @include ds-flex (flex , flex-start , center);
-                margin-bottom: 30px;
-                .client-img{
-                    @include rounded (70px , 70px);
-                    margin-right: 20px;
-                    img{
-                        @include rounded (100% , 100%);
-                        object-fit: cover;
+            .testimonial{
+                position: relative;
+                background-color: var(--testimonial-bg);
+                border-radius: 4px;
+                padding: 30px;
+                transition: .5s;
+                width: 48%;
+                @include responsive (767px){
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    opacity: 0;
+                    transform-origin: top left;
+                    transform: rotateY(90deg);
+                    transition: .5s;
+                    &.run{
+                        opacity: 1;
+                        transform: rotateY(0);
                     }
                 }
-                .client-name{
-                    h3{
-                        color: var(--title-color);
-                        margin: 0 0 10px 0;
-                        font-size: 17px;
-                        text-transform: capitalize;
-                        font-weight: 550;
-                    }
-                    span{
-                        color: #6c757d;
-                        text-transform: capitalize;
-                        font-size: 16px;
-                    }
-                }
-            }
-            .client-text{
-                p{
-                    margin-bottom: 30px;
-                    line-height: 1.8;
-                    color: var(--title-color);
-                }
-                .rate{
+                .client-info{
                     @include ds-flex (flex , flex-start , center);
-                    li{
-                        color: rgb(255,193,7);
-                        &:not(:last-child){margin-right: 4px}
+                    margin-bottom: 30px;
+                    .client-img{
+                        @include rounded (70px , 70px);
+                        margin-right: 20px;
+                        img{
+                            @include rounded (100% , 100%);
+                            object-fit: cover;
+                        }
+                    }
+                    .client-name{
+                        h3{
+                            color: var(--title-color);
+                            margin: 0 0 10px 0;
+                            font-size: 17px;
+                            text-transform: capitalize;
+                            font-weight: 550;
+                        }
+                        span{
+                            color: #6c757d;
+                            text-transform: capitalize;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .client-text{
+                    p{
+                        margin-bottom: 30px;
+                        line-height: 1.8;
+                        color: var(--title-color);
+                    }
+                    .rate{
+                        @include ds-flex (flex , flex-start , center);
+                        li{
+                            color: rgb(255,193,7);
+                            &:not(:last-child){margin-right: 4px}
+                        }
                     }
                 }
             }
