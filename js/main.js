@@ -221,7 +221,7 @@ colorArray.forEach(function(btn){
 let testimonials = document.querySelectorAll('.testimonials-container .testimonial');
 let testiArray = [...testimonials];
 let pagenations = document.querySelector('.pagenation');
-let media_query = 'screen and (min-width:320px) and (max-width:991px)';
+let media_query = 'screen and (min-width:320px) and (max-width:767px)';
 let matched = window.matchMedia(media_query).matches;
 let current = 1;
 
@@ -273,12 +273,61 @@ function removeActive(){
     })
 }
 
-// for(i = 0 ; i < liList.length ; i++){
-//     if(matched){
-//        liList[i].addEventListener('click' , function(){
-//         removeActive();
-        
-//        })
-//     }
-// }
+
+// add active class on slider container 
+let sliderContainer = document.querySelectorAll('.slider-container');
+let slidercontArray = Array.from(sliderContainer);
+let sliderContainerEle = document.querySelectorAll('.testimonial');
+let slidArray = Array.from(sliderContainerEle);
+let pagenationBullets = document.querySelectorAll('.pagenation li');
+let slidSize = slidArray[0].getBoundingClientRect();
+let slidWidth = slidSize.width;
+console.log(slidSize.width)
+
+
+if(matched){
+    pagenationBullets.forEach(function(e){
+        e.addEventListener('click' , function(){
+            pagenationBullets.forEach(function(el){
+                el.classList.remove('active')
+            })
+            e.classList.add('active');
+            if(e.dataset.index <= 1) {
+                slidercontArray[1].classList.remove('active');
+                slidercontArray[0].classList.add('active')
+            }else{
+                slidercontArray[0].classList.remove('active');
+                slidercontArray[1].classList.add('active')
+            }
+            sliderContainerEle.forEach(function(ele){
+                ele.classList.remove('run')
+            })
+            sliderContainerEle[e.dataset.index].classList.add('run')
+        })
+    })
+}
+
+if(!matched){
+   pagenationBullets.forEach(function(e){
+    e.addEventListener('click' , function(){
+        pagenationBullets.forEach(function(bullet){
+          bullet.classList.remove('active')
+        })
+        e.classList.add('active');
+        if(e === pagenationBullets[1]){
+            slidercontArray.forEach(function(slide){
+                slide.classList.remove('active');
+            })
+            slidercontArray[1].classList.add('active')
+        }else{
+            slidercontArray.forEach(function(slide){
+                slide.classList.remove('active');
+            })
+            slidercontArray[0].classList.add('active')
+        }
+    })
+})
+}
+
+// console.log(sliderContainerEle)
 
