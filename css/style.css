@@ -899,74 +899,104 @@ a {
   }
 }
 .main-content__testimonials .testimonials-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  justify-content: center;
+  position: relative;
+  transition: 0.5s;
+  height: 350px;
+  width: 100%;
+}
+.main-content__testimonials .testimonials-container .slider-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform-origin: top left;
+  transform: rotateY(90deg);
   transition: 0.5s;
 }
-.main-content__testimonials .testimonials-container .testimonial {
+@media (max-width: 767px) {
+  .main-content__testimonials .testimonials-container .slider-container {
+    flex-direction: column;
+  }
+}
+.main-content__testimonials .testimonials-container .slider-container.active {
+  opacity: 1;
+  transform: rotateY(0);
+}
+.main-content__testimonials .testimonials-container .slider-container .testimonial {
   position: relative;
   background-color: var(--testimonial-bg);
   border-radius: 4px;
   padding: 30px;
   transition: 0.5s;
-  min-width: 48%;
-  max-width: 100%;
+  width: 48%;
 }
-.main-content__testimonials .testimonials-container .testimonial.show {
-  transform: translateX(0);
+@media (max-width: 767px) {
+  .main-content__testimonials .testimonials-container .slider-container .testimonial {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    transform-origin: top left;
+    transform: rotateY(90deg);
+    transition: 0.5s;
+  }
+  .main-content__testimonials .testimonials-container .slider-container .testimonial.run {
+    opacity: 1;
+    transform: rotateY(0);
+  }
 }
-.main-content__testimonials .testimonials-container .testimonial.hide {
-  transform: translateX(-250%);
-}
-.main-content__testimonials .testimonials-container .testimonial .client-info {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-info {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 30px;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-info .client-img {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-info .client-img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   margin-right: 20px;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-info .client-img img {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-info .client-img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-info .client-name h3 {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-info .client-name h3 {
   color: var(--title-color);
   margin: 0 0 10px 0;
   font-size: 17px;
   text-transform: capitalize;
   font-weight: 550;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-info .client-name span {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-info .client-name span {
   color: #6c757d;
   text-transform: capitalize;
   font-size: 16px;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-text p {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-text p {
   margin-bottom: 30px;
   line-height: 1.8;
   color: var(--title-color);
 }
-.main-content__testimonials .testimonials-container .testimonial .client-text .rate {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-text .rate {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.main-content__testimonials .testimonials-container .testimonial .client-text .rate li {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-text .rate li {
   color: rgb(255, 193, 7);
 }
-.main-content__testimonials .testimonials-container .testimonial .client-text .rate li:not(:last-child) {
+.main-content__testimonials .testimonials-container .slider-container .testimonial .client-text .rate li:not(:last-child) {
   margin-right: 4px;
 }
 .main-content__testimonials .pagenation {
