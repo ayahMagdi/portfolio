@@ -28,8 +28,7 @@
             p{
                 line-height: 1.8;
                 color: var(--p-color);
-                // font-size: 17px;
-                @include responsive (991px){font-size: 16px;}
+                @include responsive (767px){font-size: 14px;}
                 &:first-child{margin-bottom: 30px}
             }
         }
@@ -57,6 +56,10 @@
                 margin-top: 30px;
                 box-shadow: 0px 5px 15px rgba(0 ,0 ,0, 15%);
                 transition: .5s;
+                @include responsive(767px){
+                    margin: 30px auto 0 auto;
+                    padding: 20px 35px;
+                }
                 &:hover{
                     box-shadow: 0px 5px 15px rgba(0 ,0 ,0, 30%);
                     background-color: #1baa80;
@@ -65,8 +68,9 @@
         }
     }
     .about-stats{
-        @include ds-grid (grid,minmax(200px , 1fr),center,center , 50px);
+        @include ds-grid (grid,minmax(240px , 1fr),center,center , 50px);
         margin-top: 100px;
+        @include responsive(767px){margin-top: 60px;gap: 30px}
         &__stat{
             text-align: center;
             border: var(--border-bottom);

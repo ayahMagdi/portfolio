@@ -5,6 +5,7 @@
     font-weight: 500;
     text-transform: capitalize;
     margin: 0 0 20px 0;
+    @include responsive (767px){font-size: 22px;}
 }
 
 .main-content__resume{
@@ -12,7 +13,8 @@
     background-color: var(--main-background);
     @include responsive (767px){padding: 50px 0}
     .resume-content{
-        @include ds-grid (grid,minmax(344px , 1fr),center,center,50px);
+        @include ds-grid (grid,minmax(340px , 1fr),center,center,50px);
+        @include responsive (767px){gap: 10px;}
         &__education , &__experience{
             h3{@extend %section-title}
             .experience-info , .education-info{
@@ -36,10 +38,12 @@
                     font-size: 23px;
                     margin: 15px 0;
                     font-weight: 400;
+                    @include responsive (767px){font-size: 20px;}
                 }
                 .university{
                     color: #dc3545;
                     font-size: 16px;
+                    @include responsive (767px){font-size: 15px;}
                 }
                 p{
                     margin: 20px 0 0 0;
@@ -52,8 +56,9 @@
     .resume-skills{
         h3{@extend %section-title}
         .skills-container{
-            @include ds-grid (grid,minmax(344px , 1fr),center,center,50px);
+            @include ds-grid (grid,minmax(340px , 1fr),center,center,50px);
             margin-top: 30px;
+            @include responsive (767px){gap: 30px;}
             .skills{
                 h4{
                     color: var(--alt-title);
@@ -91,6 +96,7 @@
         padding: 20px 40px;
         transition: .5s;
         i{margin-left: 8px;}
+        @include responsive (767px){padding: 20px 30px;}
         &:hover{
             background-color: #6c757d;
             border-color: #6c757d;

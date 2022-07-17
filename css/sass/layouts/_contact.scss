@@ -51,7 +51,7 @@
                             margin-right: 20px;
                             @include responsive (991px){margin-right: 15px;}
                         }
-                        i{color: #4d555a;}
+                        i{color: var(--social-icons)}
                     }
                 }
              }
