@@ -34,7 +34,7 @@ a.btn{
         opacity: .4;
         line-height: 1.3;
         @include responsive (991px){font-size: 6rem}
-        @include responsive (767px){font-size: 3.6rem}
+        @include responsive (767px){font-size: 3.1rem}
     }
     &::after{
         @include position (absolute,auto,-17px,50%,auto,translateX(-50%));
