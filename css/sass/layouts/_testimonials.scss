@@ -51,6 +51,7 @@
                 .client-info{
                     @include ds-flex (flex , flex-start , center);
                     margin-bottom: 30px;
+                    @include responsive(767px){margin-bottom: 15px}
                     .client-img{
                         @include rounded (70px , 70px);
                         margin-right: 20px;
@@ -79,6 +80,7 @@
                         margin-bottom: 30px;
                         line-height: 1.8;
                         color: var(--title-color);
+                        @include responsive(767px){margin-bottom: 15px}
                     }
                     .rate{
                         @include ds-flex (flex , flex-start , center);
